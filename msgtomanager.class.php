@@ -1,11 +1,11 @@
 <?php
 /* Copyright (C) BJRambo <http://www.bjrambo.com> */
 /**
- * @class  msgtoadmin
+ * @class  msgtomanager
  * @author BJRambo (qw5414@naver.com)
- * @brief high class of the msgtoadmin module
+ * @brief high class of the msgtomanager module
  */
-class msgtoadmin extends ModuleObject
+class msgtomanager extends ModuleObject
 {
 	private $triggers = array(
 
@@ -21,7 +21,7 @@ class msgtoadmin extends ModuleObject
 
 	function checkUpdate()
 	{
-		return new Object();
+		return false;
 	}
 
 	function moduleUpdate()
@@ -39,5 +39,5 @@ class msgtoadmin extends ModuleObject
 		return new Object();
 	}
 }
-/* End of file msgtoadmin.class.php */
-/* Location: ./modules/msgtoadmin/msgtoadmin.class.php */
+/* End of file msgtomanager.class.php */
+/* Location: ./modules/msgtomanager/msgtomanager.class.php */

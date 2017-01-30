@@ -5,9 +5,9 @@
  * @author BJRambo (qw5414@naver.com)
  * @brief admin controller class of the msgadmin module
  */
-class msgadminAdminController extends msgtoadmin
+class msgtomanagerAdminController extends msgtomanager
 {
 
 }
-/* End of file msgtoadmin.admin.controller.php */
-/* Location: ./modules/msgtoadmin/msgtoadmin.admin.controller.php */
+/* End of file msgtomanager.admin.controller.php */
+/* Location: ./modules/msgtomanager/msgtomanager.admin.controller.php */
