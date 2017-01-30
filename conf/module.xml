@@ -5,5 +5,7 @@
 	<actions>
 		<action name="dispAdminMsgtomanagerConfig" type="view" />
 		<action name="dispAdminMsgtomanagerLog" type="view" />
+
+		<action name="dispMsgtomanagerSendmessage" type="view" standalone="true"  />
 	</actions>
 </module>
