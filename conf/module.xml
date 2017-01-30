@@ -3,7 +3,7 @@
 	<grants />
 	<permissions />
 	<actions>
-		<action name="dispAdminMsgadminConfig" type="view" />
-		<action name="dispAdminMsgadminLog" type="view" />
+		<action name="dispAdminMsgtoadminConfig" type="view" />
+		<action name="dispAdminMsgtoadminLog" type="view" />
 	</actions>
 </module>
