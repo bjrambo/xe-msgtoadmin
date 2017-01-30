@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module>
+	<grants />
+	<permissions />
+	<actions>
+		<action name="dispAdminMsgadminConfig" type="view" />
+		<action name="dispAdminMsgadminLog" type="view" />
+	</actions>
+</module>

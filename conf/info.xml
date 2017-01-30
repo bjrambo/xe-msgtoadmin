@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module version="0.2">
+	<title xml:lang="ko">관리자에게 쪽지보내기</title>
+	<description xml:lang="ko">관리자에게 쪽지를 보내도록 합니다.</description>
+	<version>0.1</version>
+	<date>2017-01-30</date>
+	<category>system</category>
+
+	<author email_address="qw5414@naver.com" link="http://bjrambo.com/">
+		<name xml:lang="ko">BJ람보</name>
+		<name xml:lang="en">BJRambo</name>
+	</author>
+</module>
