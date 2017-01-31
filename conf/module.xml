@@ -7,5 +7,7 @@
 		<action name="dispAdminMsgtomanagerLog" type="view" />
 
 		<action name="dispMsgtomanagerSendmessage" type="view" standalone="true"  />
+
+		<action name="procMsgtomanagerSendMessage" type="controller" standalone="true" />
 	</actions>
 </module>
