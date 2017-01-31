@@ -10,12 +10,6 @@ class msgtomanagerController extends msgtomanager
 
 	function procMsgtomanagerSendMessage()
 	{
-		// Check login information
-		if(!Context::get('is_logged'))
-		{
-			return new Object(-1, 'msg_not_logged');
-		}
-
 		$logged_info = Context::get('logged_info');
 
 		// Check variables
