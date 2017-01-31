@@ -25,7 +25,7 @@ class msgtomanagerView extends msgtomanager
 		}
 		else
 		{
-			$tpl_path = sprintf('%sskins/%s', './modules/communication/', $skin);
+			$tpl_path = sprintf('%sskins/%s', './modules/msgtomanager/', 'default');
 		}
 		debugPrint($tpl_path);
 		$this->setTemplatePath($tpl_path);
@@ -50,7 +50,7 @@ class msgtomanagerView extends msgtomanager
 
 		if(!Context::get('is_logged'))
 		{
-			$logged_info->member_srl = '4';
+			$logged_info->member_srl = 4;
 		}
 		// get receipient's information
 		// check inalid request
@@ -61,7 +61,7 @@ class msgtomanagerView extends msgtomanager
 		}
 
 		// check receiver and sender are same
-		if($logged_info->member_srl !== '4')
+		if($logged_info->member_srl !== 4)
 		{
 			if($logged_info->member_srl == $receiver_srl)
 			{
