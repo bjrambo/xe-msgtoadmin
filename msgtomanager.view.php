@@ -17,7 +17,6 @@ class msgtomanagerView extends msgtomanager
 		Context::set('communication_config', $this->config);
 
 		$config_parse = explode('|@|', $skin);
-		debugPrint($config_parse);
 
 		if(count($config_parse) > 1)
 		{
@@ -27,7 +26,6 @@ class msgtomanagerView extends msgtomanager
 		{
 			$tpl_path = sprintf('%sskins/%s', './modules/msgtomanager/', 'default');
 		}
-		debugPrint($tpl_path);
 		$this->setTemplatePath($tpl_path);
 
 		$oLayoutModel = getModel('layout');
@@ -89,7 +87,6 @@ class msgtomanagerView extends msgtomanager
 		}
 
 		$receiver_info = $oMemberModel->getMemberInfoByMemberSrl($receiver_srl);
-		debugPrint($receiver_info);
 		if(!$receiver_info)
 		{
 			return new Object(-1, 'msg_invalid_request');
