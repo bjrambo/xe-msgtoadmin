@@ -15,4 +15,13 @@
 	<div class="log-content xe_content">
 		{$log_data->content}
 	</div>
+
+	<form ruleset="sendMessage" action="./" method="post">
+		<input type="hidden" name="module" value="msgtomanager" />
+		<input type="hidden" name="act" value="procMsgtomanagerAdminInsertComment" />
+		<input type="hidden" name="content" value="{htmlspecialchars($source_message->content, ENT_COMPAT | ENT_HTML401, 'UTF-8', false)}" />
+		<input type="hidden" name="log_srl" value="{$log_data->log_srl}" />
+		<input type="hidden" name="xe_validator_id" value="modules/msgtomanager/tpl/logview/1" />
+		{$editor}
+	</form>
 </div>

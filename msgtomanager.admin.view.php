@@ -52,8 +52,6 @@ class msgtomanagerAdminView extends msgtomanager
 			return $output;
 		}
 
-		debugPrint($output);
-
 		// set a signiture by calling getEditor of the editor module
 		$oEditorModel = getModel('editor');
 		$option = new stdClass();
@@ -68,7 +66,7 @@ class msgtomanagerAdminView extends msgtomanager
 		$option->height = 300;
 		$option->skin = $this->config->editor_skin;
 		$option->colorset = $this->config->editor_colorset;
-		$editor = $oEditorModel->getEditor(Context::get('logged_info')->member_srl, $option);
+		$editor = $oEditorModel->getModuleEditor('comment', '', $args->log_srl, 'log_srl', 'content');
 		Context::set('editor', $editor);
 
 		Context::set('log_data', $output->data);
