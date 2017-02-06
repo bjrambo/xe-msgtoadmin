@@ -48,6 +48,7 @@ class msgtomanagerView extends msgtomanager
 
 		if(!Context::get('is_logged'))
 		{
+			$logged_info = new stdClass();
 			$logged_info->member_srl = 4;
 		}
 		// get receipient's information
