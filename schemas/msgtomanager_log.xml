@@ -7,5 +7,5 @@
 	<column name="title" type="varchar" size="250" notnull="notnull" />
 	<column name="content" type="bigtext" notnull="notnull" />
 	<column name="email" type="text" size="255" notnull="notnull" />
-	<column name="nick_name" type="nick_name" notnull="notnull" />
+	<column name="nick_name" type="text" size="80" notnull="notnull" />
 </table>
