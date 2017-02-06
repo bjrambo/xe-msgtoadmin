@@ -1,0 +1,11 @@
+<query id="getMessageLogView" action="select">
+	<tables>
+		<table name="msgtomanager_log" />
+	</tables>
+	<columns>
+		<column name="*" />
+	</columns>
+	<conditions>
+		<condition operation="in" column="log_srl" var="log_srl" filter="number" />
+	</conditions>
+</query>

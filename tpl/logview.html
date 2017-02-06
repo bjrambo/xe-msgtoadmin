@@ -1,0 +1,18 @@
+<include target="header.html" />
+<load target="./css/msgtomanager.css" />
+
+<div class="container-view">
+	<header class="log-header">
+		<div class="profile">
+			<img class="profile-thumb-img" src="{$member_info->profile->src}" title="{$log_data->nick_name}" cond="$member_info->profile->src" />
+			<img class="profile-thumb-img" src="./img/profile.png" title="{$log_data->nick_name}" cond="!$member_info->profile->src" />
+		</div>
+
+		<span class="log-title">{$log_data->title}</span>
+		<div class="nick_name" cond="$log_data->nick_name">{$log_data->nick_name}</div>
+		<div class="nick_name" cond="!$log_data->nick_name">비회원 손님</div>
+	</header>
+	<div class="log-content xe_content">
+		{$log_data->content}
+	</div>
+</div>

@@ -1,0 +1,17 @@
+<query id="getMessageLog" action="select">
+	<tables>
+		<table name="msgtomanager_log" />
+	</tables>
+	<columns>
+		<column name="*" />
+	</columns>
+	<conditions>
+		<condition operation="in" column="message_srl" var="message_srl" filter="number" />
+	</conditions>
+	<navigation>
+		<index var="sort_index" default="log_srl" order="order_type" />
+		<list_count var="list_count" default="20" />
+		<page_count var="page_count" default="10" />
+		<page var="page" default="1" />
+	</navigation>
+</query>
