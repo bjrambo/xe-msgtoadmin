@@ -190,7 +190,7 @@ class msgtomanagerController extends msgtomanager
 	 */
 	function updateFlagFile($member_srl)
 	{
-		$flag_path = \RX_BASEDIR . 'files/member_extra_info/new_message_flags/' . getNumberingPath($member_srl);
+		$flag_path = _XE_PATH_ . 'files/member_extra_info/new_message_flags/' . getNumberingPath($member_srl);
 		$flag_file = $flag_path . $member_srl;
 		$new_message_count = getModel('communication')->getNewMessageCount($member_srl);
 		if($new_message_count > 0)
