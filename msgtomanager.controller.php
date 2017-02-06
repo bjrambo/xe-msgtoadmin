@@ -96,6 +96,8 @@ class msgtomanagerController extends msgtomanager
 
 	function sendMessage($sender_srl, $receiver_srl, $title, $content, $sender_log = TRUE)
 	{
+		$logged_info = Context::get('logged_info');
+
 		// Encode the title and content.
 		$title = htmlspecialchars($title, ENT_COMPAT | ENT_HTML401, 'UTF-8', false);
 		$content = removeHackTag($content);
@@ -128,6 +130,9 @@ class msgtomanagerController extends msgtomanager
 		$trigger_obj->title = $title;
 		$trigger_obj->content = $content;
 		$trigger_obj->sender_log = $sender_log;
+		$trigger_obj->nick_name = $logged_info->nick_name;
+		$trigger_obj->email = $logged_info->email_address;
+
 		$trigger_output = ModuleHandler::triggerCall('communication.sendMessage', 'before', $trigger_obj);
 		if(!$trigger_output->toBool())
 		{
@@ -195,6 +200,8 @@ class msgtomanagerController extends msgtomanager
 		$args->related_srl = $obj->related_srl;
 		$args->title = $obj->title;
 		$args->content = $obj->content;
+		$args->nick_name = $obj->nick_name;
+		$args->email = $obj->email;
 
 		$output = executeQuery('msgtomanager.insertLog', $args);
 

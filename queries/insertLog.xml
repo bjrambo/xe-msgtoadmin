@@ -10,5 +10,7 @@
 		<column name="related_srl" var="related_srl" notnull="notnull" />
 		<column name="title" var="title" notnull="notnull" />
 		<column name="content" var="content" notnull="notnull" />
+		<column name="nick_name" var="nick_name" notnull="notnull" />
+		<column name="email" var="email" notnull="notnull" />
 	</columns>
 </query>
