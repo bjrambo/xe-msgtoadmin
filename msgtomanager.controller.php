@@ -118,22 +118,6 @@ class msgtomanagerController extends msgtomanager
 		$sender_args->related_srl = $related_srl;
 		$sender_args->list_order = $sender_args->message_srl * -1;
 
-		// messages to save in the receiver's message box
-		$receiver_args = new stdClass();
-		$receiver_args->message_srl = $related_srl;
-		$receiver_args->related_srl = 0;
-		$receiver_args->list_order = $related_srl * -1;
-		$receiver_args->sender_srl = $sender_srl;
-		if(!$receiver_args->sender_srl)
-		{
-			$receiver_args->sender_srl = $receiver_srl;
-		}
-		$receiver_args->receiver_srl = $receiver_srl;
-		$receiver_args->message_type = 'R';
-		$receiver_args->title = $title;
-		$receiver_args->content = $content;
-		$receiver_args->readed = 'N';
-		$receiver_args->regdate = date("YmdHis");
 
 		// Call a trigger (before)
 		$trigger_obj = new stdClass();
@@ -150,6 +134,12 @@ class msgtomanagerController extends msgtomanager
 			return $trigger_output;
 		}
 
+		$isSend = $this->sendLogInsert($trigger_obj);
+		if(!$isSend->toBool())
+		{
+			return $isSend;
+		}
+
 		$oDB = DB::getInstance();
 		$oDB->begin();
 
@@ -162,14 +152,6 @@ class msgtomanagerController extends msgtomanager
 				$oDB->rollback();
 				return $output;
 			}
-		}
-
-		// messages to save in the receiver's message box
-		$output = executeQuery('communication.sendMessage', $receiver_args);
-		if(!$output->toBool())
-		{
-			$oDB->rollback();
-			return $output;
 		}
 
 		// Call a trigger (after)
@@ -201,6 +183,22 @@ class msgtomanagerController extends msgtomanager
 		{
 			FileHandler::removeFile($flag_file);
 		}
+	}
+
+	function sendLogInsert($obj)
+	{
+		$args = new stdClass();
+		$args->log_srl = getNextSequence();
+		$args->sender_srl = $obj->sender_srl;
+		$args->receiver_srl = $obj->receiver_srl;
+		$args->message_srl = $obj->message_srl;
+		$args->related_srl = $obj->related_srl;
+		$args->title = $obj->title;
+		$args->content = $obj->content;
+
+		$output = executeQuery('msgtomanager.insertLog', $args);
+
+		return $output;
 	}
 }
 /* End of file msgtomanager.controller.php */
