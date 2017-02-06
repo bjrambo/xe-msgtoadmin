@@ -7,7 +7,15 @@
  */
 class msgtomanagerAdminController extends msgtomanager
 {
+	function procMsgtomanagerAdminInsertConfig()
+	{
 
+	}
+
+	function procMsgtomanagerAdminInsertComment()
+	{
+
+	}
 }
 /* End of file msgtomanager.admin.controller.php */
 /* Location: ./modules/msgtomanager/msgtomanager.admin.controller.php */

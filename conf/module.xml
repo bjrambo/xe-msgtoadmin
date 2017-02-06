@@ -3,8 +3,12 @@
 	<grants />
 	<permissions />
 	<actions>
-		<action name="dispAdminMsgtomanagerConfig" type="view" />
-		<action name="dispAdminMsgtomanagerLog" type="view" />
+		<action name="dispMsgtomanagerAdminConfig" type="view" admin_index="true" />
+		<action name="dispMsgtomanagerAdminLogList" type="view" />
+		<action name="dispMsgtomanagerAdminLogView" type="view" />
+
+		<action name="procMsgtomanagerAdminInsertConfig" type="controller" />
+		<action name="procMsgtomanagerAdminInsertComment" type="controller" />
 
 		<action name="dispMsgtomanagerSendmessage" type="view" standalone="true"  />
 
