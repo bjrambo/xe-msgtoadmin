@@ -54,13 +54,9 @@ class msgtomanagerView extends msgtomanager
 		// get receipient's information
 		// check inalid request
 		$receiver_srl = Context::get('receiver_srl');
-		if(!$receiver_srl)
-		{
-			return new Object(-1, 'msg_invalid_request');
-		}
 
 		// check receiver and sender are same
-		if($logged_info->member_srl !== 4)
+		if($logged_info->member_srl !== 4 && $receiver_srl)
 		{
 			if($logged_info->member_srl == $receiver_srl)
 			{
