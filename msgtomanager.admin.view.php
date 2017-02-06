@@ -10,7 +10,7 @@ class msgtomanagerAdminView extends msgtomanager
 	function init()
 	{
 		$this->setTemplatePath($this->module_path.'tpl');
-		$this->setTemplateFile(strtolower(str_replace('dispNcenterliteAdmin', '', $this->act)));
+		$this->setTemplateFile(strtolower(str_replace('dispMsgtomanagerAdmin', '', $this->act)));
 	}
 
 	function dispMsgtomanagerAdminLogList()
