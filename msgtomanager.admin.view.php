@@ -19,6 +19,7 @@ class msgtomanagerAdminView extends msgtomanager
 		$args->page = Context::get('page');
 		$args->list_count = 30;
 		$args->page_count = 10;
+		$args->order_type = 'desc';
 		$args->log_srl = Context::get('log_srl');
 		/*
 		 * HACK : not support search function in now
@@ -27,7 +28,6 @@ class msgtomanagerAdminView extends msgtomanager
 		*/
 
 		$output = executeQueryArray('msgtomanager.getMessageLog', $args);
-		debugPrint($output);
 
 		Context::set('total_count', $output->total_count);
 		Context::set('total_page', $output->total_page);
